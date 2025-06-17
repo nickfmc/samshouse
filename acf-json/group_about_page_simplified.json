@@ -1,0 +1,178 @@
+{
+    "key": "group_about_page_fields",
+    "title": "About Page - Board Members",
+    "fields": [
+        {
+            "key": "field_board_members",
+            "label": "Board Members",
+            "name": "board_members",
+            "type": "repeater",
+            "instructions": "Add board members information",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_member_name",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add Board Member",
+            "sub_fields": [
+                {
+                    "key": "field_member_photo",
+                    "label": "Member Photo",
+                    "name": "member_photo",
+                    "type": "image",
+                    "instructions": "Upload a photo of the board member",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_member_name",
+                    "label": "Member Name",
+                    "name": "member_name",
+                    "type": "text",
+                    "instructions": "Enter the board member's full name",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_member_title",
+                    "label": "Board Position/Title",
+                    "name": "member_title",
+                    "type": "text",
+                    "instructions": "Enter the member's position (e.g., President, Vice President, Secretary)",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "President",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_member_bio",
+                    "label": "Bio/Description",
+                    "name": "member_bio",
+                    "type": "textarea",
+                    "instructions": "Enter a brief bio or description of the board member",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",                    "maxlength": "",
+                    "rows": 4,
+                    "new_lines": "br"
+                },
+                {
+                    "key": "field_member_tenure",
+                    "label": "Tenure/Years Served",
+                    "name": "member_tenure",
+                    "type": "text",
+                    "instructions": "How long they've served on the board (e.g., '2019 - Present', '3 years')",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "2019 - Present",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_member_email",
+                    "label": "Email Address",
+                    "name": "member_email",
+                    "type": "email",
+                    "instructions": "Board member's email address (optional)",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "john@example.com",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_member_linkedin",
+                    "label": "LinkedIn Profile URL",
+                    "name": "member_linkedin",
+                    "type": "url",
+                    "instructions": "LinkedIn profile URL (optional)",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "34",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "https://linkedin.com/in/username"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "pg-about.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Board members section for the About page",
+    "show_in_rest": 0
+}

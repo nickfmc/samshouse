@@ -3,11 +3,7 @@
       <div class="o-wrapper-wide">
         <div class="c-footer-main">
           <div class="c-footer-logo">
-            <?php if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) : ?>
-              <?php the_custom_logo(); ?>
-            <?php else : ?>
-              <h2 class="c-footer-site-title"><?php bloginfo('name'); ?></h2>
-            <?php endif; ?>
+            <img src="<?php bloginfo( 'template_url' ) ?>/img/SamanthasHouse_Logo_white.svg" alt="Samantha's House" />
           </div>
           
           <div class="c-footer-cta">

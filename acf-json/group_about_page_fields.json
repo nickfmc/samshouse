@@ -1,0 +1,336 @@
+{
+    "key": "group_about_page_fields",
+    "title": "About Page Fields",
+    "fields": [
+        {
+            "key": "field_about_hero_image",
+            "label": "Hero Image",
+            "name": "about_hero_image",
+            "type": "image",
+            "instructions": "Upload a hero image for the about page header",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_about_hero_subtitle",
+            "label": "Hero Subtitle",
+            "name": "about_hero_subtitle",
+            "type": "text",
+            "instructions": "A subtitle or tagline for the hero section",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Making a difference in our community",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_about_mission_statement",
+            "label": "Mission Statement",
+            "name": "about_mission_statement",
+            "type": "wysiwyg",
+            "instructions": "Enter your organization's mission statement",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_about_story",
+            "label": "Our Story",
+            "name": "about_story",
+            "type": "wysiwyg",
+            "instructions": "Tell your organization's story",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_board_members",
+            "label": "Board Members",
+            "name": "board_members",
+            "type": "repeater",
+            "instructions": "Add board members and their information",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_board_member_name",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add Board Member",
+            "sub_fields": [
+                {
+                    "key": "field_board_member_photo",
+                    "label": "Photo",
+                    "name": "photo",
+                    "type": "image",
+                    "instructions": "Upload a professional headshot",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_board_member_name",
+                    "label": "Name",
+                    "name": "name",
+                    "type": "text",
+                    "instructions": "Board member's full name",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "John Doe",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_board_member_title",
+                    "label": "Title/Position",
+                    "name": "title",
+                    "type": "text",
+                    "instructions": "Board position or title",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "President, Secretary, etc.",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_board_member_tenure",
+                    "label": "Tenure",
+                    "name": "tenure",
+                    "type": "text",
+                    "instructions": "How long they've served (optional)",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Since 2020",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_board_member_bio",
+                    "label": "Biography",
+                    "name": "bio",
+                    "type": "textarea",
+                    "instructions": "Brief biography or background",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "60",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Tell us about their background and why they're passionate about the cause...",
+                    "maxlength": "",
+                    "rows": 4,
+                    "new_lines": "br"
+                },
+                {
+                    "key": "field_board_member_linkedin",
+                    "label": "LinkedIn URL",
+                    "name": "linkedin",
+                    "type": "url",
+                    "instructions": "LinkedIn profile URL (optional)",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "https://linkedin.com/in/username"
+                },
+                {
+                    "key": "field_board_member_email",
+                    "label": "Contact Email",
+                    "name": "email",
+                    "type": "email",
+                    "instructions": "Public contact email (optional)",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "contact@example.com"
+                }
+            ]
+        },
+        {
+            "key": "field_about_stats",
+            "label": "Key Statistics",
+            "name": "about_stats",
+            "type": "repeater",
+            "instructions": "Add key statistics or achievements",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_stat_number",
+            "min": 0,
+            "max": 6,
+            "layout": "table",
+            "button_label": "Add Statistic",
+            "sub_fields": [
+                {
+                    "key": "field_stat_number",
+                    "label": "Number",
+                    "name": "number",
+                    "type": "text",
+                    "instructions": "The statistic number",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "30",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "500+",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_stat_label",
+                    "label": "Label",
+                    "name": "label",
+                    "type": "text",
+                    "instructions": "What the number represents",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "70",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Lives Changed",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                }
+            ]
+        },
+        {
+            "key": "field_about_contact_info",
+            "label": "Contact Information",
+            "name": "about_contact_info",
+            "type": "wysiwyg",
+            "instructions": "Contact details or call-to-action",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "pg-about.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Fields for the About page template",
+    "show_in_rest": 0
+}

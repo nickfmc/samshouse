@@ -1,0 +1,246 @@
+/* GenerateBlocks Staff Cards Custom Styling */
+
+/* Main staff section container */
+.gb-container-staff-section {
+  background-color: #f8f9fa;
+  padding: 40px;
+  
+  @media (min-width: 768px) {
+    padding: 60px 40px;
+  }
+}
+
+/* Staff header section */
+.gb-container-staff-header {
+  max-width: 800px;
+  margin: 0 auto 60px;
+  text-align: center;
+  padding: 40px;
+}
+
+.gb-text-staff-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0a64a1;
+  margin-bottom: 1rem;
+  
+  @media (max-width: 767px) {
+    font-size: 2rem;
+  }
+}
+
+.gb-text-staff-subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 0;
+}
+
+/* Staff cards grid */
+.gb-grid-staff-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Individual staff card */
+.gb-container-staff-card-1,
+.gb-container-staff-card-2,
+.gb-container-staff-card-3,
+[class*="gb-container-staff-card-"] {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+}
+
+/* Staff card images */
+.gb-container-staff-card-1 .wp-block-image,
+.gb-container-staff-card-2 .wp-block-image,
+.gb-container-staff-card-3 .wp-block-image,
+[class*="gb-container-staff-card-"] .wp-block-image {
+  margin: 0;
+  
+  img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 16px 16px 0 0;
+  }
+}
+
+/* Staff info section */
+.gb-container-staff-info-1,
+.gb-container-staff-info-2,
+.gb-container-staff-info-3,
+[class*="gb-container-staff-info-"] {
+  padding: 30px 30px 20px;
+}
+
+/* Staff name */
+.gb-text-staff-name-1,
+.gb-text-staff-name-2,
+.gb-text-staff-name-3,
+[class*="gb-text-staff-name-"] {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0a64a1;
+  margin-bottom: 0.5rem;
+}
+
+/* Staff title/position */
+.gb-text-staff-title-1,
+.gb-text-staff-title-2,
+.gb-text-staff-title-3,
+[class*="gb-text-staff-title-"]:not([class*="gb-text-staff-title"]:first-child) {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #f18d2c;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+}
+
+/* Staff bio */
+.gb-text-staff-bio-1,
+.gb-text-staff-bio-2,
+.gb-text-staff-bio-3,
+[class*="gb-text-staff-bio-"] {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 0;
+}
+
+/* Staff meta section */
+.gb-container-staff-meta-1,
+.gb-container-staff-meta-2,
+.gb-container-staff-meta-3,
+[class*="gb-container-staff-meta-"] {
+  padding: 20px 30px 0;
+  margin-top: 16px;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* Staff tenure */
+.gb-text-staff-tenure-1,
+.gb-text-staff-tenure-2,
+.gb-text-staff-tenure-3,
+[class*="gb-text-staff-tenure-"] {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 0;
+  font-style: italic;
+}
+
+/* Staff contact section */
+.gb-container-staff-contact-1,
+.gb-container-staff-contact-2,
+.gb-container-staff-contact-3,
+[class*="gb-container-staff-contact-"] {
+  padding: 20px 30px 30px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Staff contact buttons */
+.gb-button-email-1,
+.gb-button-email-2,
+.gb-button-email-3,
+.gb-button-linkedin-1,
+.gb-button-linkedin-2,
+.gb-button-linkedin-3,
+[class*="gb-button-email-"],
+[class*="gb-button-linkedin-"] {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  
+  &:hover {
+    transform: translateY(-1px);
+    text-decoration: none;
+  }
+}
+
+/* Email button styling */
+.gb-button-email-1,
+.gb-button-email-2,
+.gb-button-email-3,
+[class*="gb-button-email-"] {
+  background-color: rgba(10, 100, 161, 0.1);
+  color: #0a64a1;
+  
+  &:hover {
+    background-color: #0a64a1;
+    color: #ffffff;
+  }
+}
+
+/* LinkedIn button styling */
+.gb-button-linkedin-1,
+.gb-button-linkedin-2,
+.gb-button-linkedin-3,
+[class*="gb-button-linkedin-"] {
+  background-color: rgba(0, 119, 181, 0.1);
+  color: #0077b5;
+  
+  &:hover {
+    background-color: #0077b5;
+    color: #ffffff;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .gb-container-staff-section {
+    padding: 30px 20px;
+  }
+  
+  .gb-container-staff-header {
+    padding: 20px;
+    margin-bottom: 40px;
+  }
+  
+  .gb-grid-staff-cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .gb-container-staff-info-1,
+  .gb-container-staff-info-2,
+  .gb-container-staff-info-3,
+  [class*="gb-container-staff-info-"] {
+    padding: 20px 20px 15px;
+  }
+  
+  .gb-container-staff-meta-1,
+  .gb-container-staff-meta-2,
+  .gb-container-staff-meta-3,
+  [class*="gb-container-staff-meta-"] {
+    padding: 15px 20px 0;
+  }
+  
+  .gb-container-staff-contact-1,
+  .gb-container-staff-contact-2,
+  .gb-container-staff-contact-3,
+  [class*="gb-container-staff-contact-"] {
+    padding: 15px 20px 20px;
+  }
+}

@@ -3164,7 +3164,7 @@ blockquote::before {
   top: 0;
   left: 10px;
   z-index: -1;
-  color: #f5f5f5;
+  color: #fafafa;
   font-size: 190px;
   line-height: 1;
 }
@@ -3273,8 +3273,7 @@ input::placeholder, textarea::placeholder {
   opacity: 0.8;
 }
 
-.donation-form {
-  max-width: 600px;
+.donation-form, .registration-form {
   margin: 0 auto;
   padding: 2rem;
   background: #fff;
@@ -3283,19 +3282,19 @@ input::placeholder, textarea::placeholder {
           box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
-.donation-form .section {
+.donation-form .section, .registration-form .section {
   margin-bottom: 2.5rem;
   padding-bottom: 2rem;
   border-bottom: 1px solid #f0f0f0;
 }
-.donation-form .section:last-child {
+.donation-form .section:last-child, .registration-form .section:last-child {
   border-bottom: none;
   margin-bottom: 0;
 }
-.donation-form .section.hidden {
+.donation-form .section.hidden, .registration-form .section.hidden {
   display: none;
 }
-.donation-form .section h3 {
+.donation-form .section h3, .registration-form .section h3 {
   color: #2c3e50;
   font-size: 1.25rem;
   font-weight: 600;
@@ -3304,33 +3303,38 @@ input::placeholder, textarea::placeholder {
   border-bottom: 2px solid #e74c3c;
   display: inline-block;
 }
-.donation-form .field {
+.donation-form .field, .registration-form .field {
   margin-bottom: 1.5rem;
 }
-.donation-form .field:last-child {
+.donation-form .field:last-child, .registration-form .field:last-child {
   margin-bottom: 0;
 }
-.donation-form .field label {
+.donation-form .field label, .registration-form .field label {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: 500;
   color: #34495e;
   font-size: 0.9rem;
 }
-.donation-form .field label .label {
+.donation-form .field label .label, .registration-form .field label .label {
   display: inline-block;
 }
-.donation-form .field label .required-star {
+.donation-form .field label .required-star, .registration-form .field label .required-star {
   color: #e74c3c;
   margin-left: 3px;
   font-weight: bold;
 }
-.donation-form .field input[type=text],
+.donation-form .field input[type=text], .registration-form .field input[type=text],
 .donation-form .field input[type=email],
+.registration-form .field input[type=email],
 .donation-form .field input[type=tel],
+.registration-form .field input[type=tel],
 .donation-form .field input[type=number],
+.registration-form .field input[type=number],
 .donation-form .field select,
-.donation-form .field textarea {
+.registration-form .field select,
+.donation-form .field textarea,
+.registration-form .field textarea {
   width: 100%;
   max-width: none !important;
   padding: 12px 16px;
@@ -3342,12 +3346,17 @@ input::placeholder, textarea::placeholder {
   background: #fff;
   color: #2c3e50;
 }
-.donation-form .field input[type=text]:focus,
+.donation-form .field input[type=text]:focus, .registration-form .field input[type=text]:focus,
 .donation-form .field input[type=email]:focus,
+.registration-form .field input[type=email]:focus,
 .donation-form .field input[type=tel]:focus,
+.registration-form .field input[type=tel]:focus,
 .donation-form .field input[type=number]:focus,
+.registration-form .field input[type=number]:focus,
 .donation-form .field select:focus,
-.donation-form .field textarea:focus {
+.registration-form .field select:focus,
+.donation-form .field textarea:focus,
+.registration-form .field textarea:focus {
   outline: none;
   border-color: #3498db;
   -webkit-box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
@@ -3355,56 +3364,71 @@ input::placeholder, textarea::placeholder {
   -webkit-transform: translateY(-1px);
           transform: translateY(-1px);
 }
-.donation-form .field input[type=text]:hover,
+.donation-form .field input[type=text]:hover, .registration-form .field input[type=text]:hover,
 .donation-form .field input[type=email]:hover,
+.registration-form .field input[type=email]:hover,
 .donation-form .field input[type=tel]:hover,
+.registration-form .field input[type=tel]:hover,
 .donation-form .field input[type=number]:hover,
+.registration-form .field input[type=number]:hover,
 .donation-form .field select:hover,
-.donation-form .field textarea:hover {
+.registration-form .field select:hover,
+.donation-form .field textarea:hover,
+.registration-form .field textarea:hover {
   border-color: #bdc3c7;
 }
-.donation-form .field input[type=text].required:invalid,
+.donation-form .field input[type=text].required:invalid, .registration-form .field input[type=text].required:invalid,
 .donation-form .field input[type=email].required:invalid,
+.registration-form .field input[type=email].required:invalid,
 .donation-form .field input[type=tel].required:invalid,
+.registration-form .field input[type=tel].required:invalid,
 .donation-form .field input[type=number].required:invalid,
+.registration-form .field input[type=number].required:invalid,
 .donation-form .field select.required:invalid,
-.donation-form .field textarea.required:invalid {
+.registration-form .field select.required:invalid,
+.donation-form .field textarea.required:invalid,
+.registration-form .field textarea.required:invalid {
   border-color: #e74c3c;
 }
-.donation-form .field input[type=text]::-webkit-input-placeholder, .donation-form .field input[type=email]::-webkit-input-placeholder, .donation-form .field input[type=tel]::-webkit-input-placeholder, .donation-form .field input[type=number]::-webkit-input-placeholder, .donation-form .field select::-webkit-input-placeholder, .donation-form .field textarea::-webkit-input-placeholder {
+.donation-form .field input[type=text]::-webkit-input-placeholder, .registration-form .field input[type=text]::-webkit-input-placeholder, .donation-form .field input[type=email]::-webkit-input-placeholder, .registration-form .field input[type=email]::-webkit-input-placeholder, .donation-form .field input[type=tel]::-webkit-input-placeholder, .registration-form .field input[type=tel]::-webkit-input-placeholder, .donation-form .field input[type=number]::-webkit-input-placeholder, .registration-form .field input[type=number]::-webkit-input-placeholder, .donation-form .field select::-webkit-input-placeholder, .registration-form .field select::-webkit-input-placeholder, .donation-form .field textarea::-webkit-input-placeholder, .registration-form .field textarea::-webkit-input-placeholder {
   color: #95a5a6;
   opacity: 1;
 }
-.donation-form .field input[type=text]::-moz-placeholder, .donation-form .field input[type=email]::-moz-placeholder, .donation-form .field input[type=tel]::-moz-placeholder, .donation-form .field input[type=number]::-moz-placeholder, .donation-form .field select::-moz-placeholder, .donation-form .field textarea::-moz-placeholder {
+.donation-form .field input[type=text]::-moz-placeholder, .registration-form .field input[type=text]::-moz-placeholder, .donation-form .field input[type=email]::-moz-placeholder, .registration-form .field input[type=email]::-moz-placeholder, .donation-form .field input[type=tel]::-moz-placeholder, .registration-form .field input[type=tel]::-moz-placeholder, .donation-form .field input[type=number]::-moz-placeholder, .registration-form .field input[type=number]::-moz-placeholder, .donation-form .field select::-moz-placeholder, .registration-form .field select::-moz-placeholder, .donation-form .field textarea::-moz-placeholder, .registration-form .field textarea::-moz-placeholder {
   color: #95a5a6;
   opacity: 1;
 }
-.donation-form .field input[type=text]:-ms-input-placeholder, .donation-form .field input[type=email]:-ms-input-placeholder, .donation-form .field input[type=tel]:-ms-input-placeholder, .donation-form .field input[type=number]:-ms-input-placeholder, .donation-form .field select:-ms-input-placeholder, .donation-form .field textarea:-ms-input-placeholder {
+.donation-form .field input[type=text]:-ms-input-placeholder, .registration-form .field input[type=text]:-ms-input-placeholder, .donation-form .field input[type=email]:-ms-input-placeholder, .registration-form .field input[type=email]:-ms-input-placeholder, .donation-form .field input[type=tel]:-ms-input-placeholder, .registration-form .field input[type=tel]:-ms-input-placeholder, .donation-form .field input[type=number]:-ms-input-placeholder, .registration-form .field input[type=number]:-ms-input-placeholder, .donation-form .field select:-ms-input-placeholder, .registration-form .field select:-ms-input-placeholder, .donation-form .field textarea:-ms-input-placeholder, .registration-form .field textarea:-ms-input-placeholder {
   color: #95a5a6;
   opacity: 1;
 }
-.donation-form .field input[type=text]::-ms-input-placeholder, .donation-form .field input[type=email]::-ms-input-placeholder, .donation-form .field input[type=tel]::-ms-input-placeholder, .donation-form .field input[type=number]::-ms-input-placeholder, .donation-form .field select::-ms-input-placeholder, .donation-form .field textarea::-ms-input-placeholder {
+.donation-form .field input[type=text]::-ms-input-placeholder, .registration-form .field input[type=text]::-ms-input-placeholder, .donation-form .field input[type=email]::-ms-input-placeholder, .registration-form .field input[type=email]::-ms-input-placeholder, .donation-form .field input[type=tel]::-ms-input-placeholder, .registration-form .field input[type=tel]::-ms-input-placeholder, .donation-form .field input[type=number]::-ms-input-placeholder, .registration-form .field input[type=number]::-ms-input-placeholder, .donation-form .field select::-ms-input-placeholder, .registration-form .field select::-ms-input-placeholder, .donation-form .field textarea::-ms-input-placeholder, .registration-form .field textarea::-ms-input-placeholder {
   color: #95a5a6;
   opacity: 1;
 }
-.donation-form .field input[type=text]::placeholder,
+.donation-form .field input[type=text]::placeholder, .registration-form .field input[type=text]::placeholder,
 .donation-form .field input[type=email]::placeholder,
+.registration-form .field input[type=email]::placeholder,
 .donation-form .field input[type=tel]::placeholder,
+.registration-form .field input[type=tel]::placeholder,
 .donation-form .field input[type=number]::placeholder,
+.registration-form .field input[type=number]::placeholder,
 .donation-form .field select::placeholder,
-.donation-form .field textarea::placeholder {
+.registration-form .field select::placeholder,
+.donation-form .field textarea::placeholder,
+.registration-form .field textarea::placeholder {
   color: #95a5a6;
   opacity: 1;
 }
-.donation-form .field select {
+.donation-form .field select, .registration-form .field select {
   height: 37px;
 }
-.donation-form .field textarea {
+.donation-form .field textarea, .registration-form .field textarea {
   min-height: 100px;
   resize: vertical;
   font-family: inherit;
 }
-.donation-form .field select {
+.donation-form .field select, .registration-form .field select {
   cursor: pointer;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
   background-position: right 12px center;
@@ -3417,7 +3441,7 @@ input::placeholder, textarea::placeholder {
   height: 48px;
   line-height: 1.2;
 }
-.donation-form .field.checkbox label {
+.donation-form .field.checkbox label, .registration-form .field.checkbox label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3427,7 +3451,7 @@ input::placeholder, textarea::placeholder {
   cursor: pointer;
   margin-bottom: 0;
 }
-.donation-form .field.checkbox label input[type=checkbox] {
+.donation-form .field.checkbox label input[type=checkbox], .registration-form .field.checkbox label input[type=checkbox] {
   width: auto;
   margin-right: 12px;
   margin-top: 2px;
@@ -3435,13 +3459,145 @@ input::placeholder, textarea::placeholder {
           transform: scale(1.2);
   accent-color: #3498db;
 }
-.donation-form .field.checkbox label .label {
+.donation-form .field.checkbox label .label, .registration-form .field.checkbox label .label {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
   line-height: 1.5;
 }
-.donation-form .field.donation-amount input {
+.donation-form .field.radio, .registration-form .field.radio {
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.donation-form .field.radio label, .registration-form .field.radio label {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  cursor: pointer;
+  margin-bottom: 0;
+  padding: 1rem;
+  background: #fff;
+  border: 2px solid #e1e8ed;
+  border-radius: 8px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+.donation-form .field.radio label:hover, .registration-form .field.radio label:hover {
+  border-color: #3498db;
+  background: #f8fbff;
+  -webkit-transform: translateY(-1px);
+          transform: translateY(-1px);
+  -webkit-box-shadow: 0 2px 8px rgba(52, 152, 219, 0.1);
+          box-shadow: 0 2px 8px rgba(52, 152, 219, 0.1);
+}
+.donation-form .field.radio label input[type=radio], .registration-form .field.radio label input[type=radio] {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+  margin-right: 12px;
+  margin-top: 2px;
+  accent-color: #3498db;
+  cursor: pointer;
+}
+.donation-form .field.radio label .label, .registration-form .field.radio label .label {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  line-height: 1.5;
+  font-weight: 500;
+  color: #2c3e50;
+}
+.donation-form .field.radio label input[type=radio]:checked + .label, .registration-form .field.radio label input[type=radio]:checked + .label {
+  color: #3498db;
+  font-weight: 600;
+}
+.donation-form .field.radio label:has(input[type=radio]:checked), .registration-form .field.radio label:has(input[type=radio]:checked) {
+  border-color: #3498db;
+  background: linear-gradient(135deg, #f8fbff 0%, #ffffff 100%);
+  -webkit-box-shadow: 0 2px 12px rgba(52, 152, 219, 0.15);
+          box-shadow: 0 2px 12px rgba(52, 152, 219, 0.15);
+}
+.donation-form .field input[type=number], .registration-form .field input[type=number] {
+  width: 100%;
+  min-width: 120px;
+  -webkit-font-feature-settings: "tnum";
+          font-feature-settings: "tnum";
+  text-align: left;
+  padding-right: 20px;
+}
+.donation-form .field input[type=number]#numberOfRegistrations, .registration-form .field input[type=number]#numberOfRegistrations {
+  max-width: 100px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-color: #27ae60;
+  padding: 12px 16px;
+}
+.donation-form .field input[type=number]#numberOfRegistrations:focus, .registration-form .field input[type=number]#numberOfRegistrations:focus {
+  border-color: #27ae60;
+  -webkit-box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.1);
+          box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.1);
+}
+.donation-form .field input[type=number]#zip-code, .registration-form .field input[type=number]#zip-code {
+  max-width: 180px;
+  letter-spacing: 0.5px;
+  padding: 12px 20px;
+}
+.donation-form .field input[type=number]::-webkit-outer-spin-button, .registration-form .field input[type=number]::-webkit-outer-spin-button, .donation-form .field input[type=number]::-webkit-inner-spin-button, .registration-form .field input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.donation-form .field input[type=number][type=number], .registration-form .field input[type=number][type=number] {
+  -moz-appearance: textfield;
+}
+.donation-form .field.amount-field, .registration-form .field.amount-field,
+.donation-form .field input.currency,
+.registration-form .field input.currency {
+  font-weight: 600;
+  color: #27ae60;
+  border-color: #27ae60;
+}
+.donation-form .field.amount-field:focus, .registration-form .field.amount-field:focus,
+.donation-form .field input.currency:focus,
+.registration-form .field input.currency:focus {
+  border-color: #27ae60;
+  -webkit-box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.1);
+          box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.1);
+}
+.donation-form .field.amount-field::-webkit-input-placeholder, .registration-form .field.amount-field::-webkit-input-placeholder, .donation-form .field input.currency::-webkit-input-placeholder, .registration-form .field input.currency::-webkit-input-placeholder {
+  color: #95c5a8;
+  font-weight: 500;
+}
+.donation-form .field.amount-field::-moz-placeholder, .registration-form .field.amount-field::-moz-placeholder, .donation-form .field input.currency::-moz-placeholder, .registration-form .field input.currency::-moz-placeholder {
+  color: #95c5a8;
+  font-weight: 500;
+}
+.donation-form .field.amount-field:-ms-input-placeholder, .registration-form .field.amount-field:-ms-input-placeholder, .donation-form .field input.currency:-ms-input-placeholder, .registration-form .field input.currency:-ms-input-placeholder {
+  color: #95c5a8;
+  font-weight: 500;
+}
+.donation-form .field.amount-field::-ms-input-placeholder, .registration-form .field.amount-field::-ms-input-placeholder, .donation-form .field input.currency::-ms-input-placeholder, .registration-form .field input.currency::-ms-input-placeholder {
+  color: #95c5a8;
+  font-weight: 500;
+}
+.donation-form .field.amount-field::placeholder, .registration-form .field.amount-field::placeholder,
+.donation-form .field input.currency::placeholder,
+.registration-form .field input.currency::placeholder {
+  color: #95c5a8;
+  font-weight: 500;
+}
+.donation-form .field.donation-amount input, .registration-form .field.donation-amount input {
   font-size: 1.5rem;
   font-weight: 600;
   text-align: center;
@@ -3449,12 +3605,12 @@ input::placeholder, textarea::placeholder {
   border-color: #27ae60;
   background: linear-gradient(135deg, #f8fffa 0%, #ffffff 100%);
 }
-.donation-form .field.donation-amount input:focus {
+.donation-form .field.donation-amount input:focus, .registration-form .field.donation-amount input:focus {
   border-color: #27ae60;
   -webkit-box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.1);
           box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.1);
 }
-.donation-form .errors {
+.donation-form .errors, .registration-form .errors {
   background: #fee;
   border: 1px solid #fcc;
   color: #c33;
@@ -3462,22 +3618,22 @@ input::placeholder, textarea::placeholder {
   border-radius: 8px;
   margin-bottom: 1.5rem;
 }
-.donation-form .errors.hidden {
+.donation-form .errors.hidden, .registration-form .errors.hidden {
   display: none;
 }
-.donation-form .error {
+.donation-form .error, .registration-form .error {
   color: #e74c3c;
   font-size: 0.875rem;
   margin-top: 0.25rem;
   display: block;
 }
-.donation-form .btn-group {
+.donation-form .btn-group, .registration-form .btn-group {
   text-align: center;
   margin-top: 2rem;
   padding-top: 2rem;
   border-top: 2px solid #ecf0f1;
 }
-.donation-form .btn-submit {
+.donation-form .btn-submit, .registration-form .btn-submit {
   background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
   color: white;
   border: none;
@@ -3493,23 +3649,23 @@ input::placeholder, textarea::placeholder {
   -webkit-box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
           box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
 }
-.donation-form .btn-submit:hover {
+.donation-form .btn-submit:hover, .registration-form .btn-submit:hover {
   -webkit-transform: translateY(-2px);
           transform: translateY(-2px);
   -webkit-box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
           box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
   background: linear-gradient(135deg, #2980b9 0%, #3498db 100%);
 }
-.donation-form .btn-submit:active {
+.donation-form .btn-submit:active, .registration-form .btn-submit:active {
   -webkit-transform: translateY(0);
           transform: translateY(0);
 }
-.donation-form .btn-submit:focus {
+.donation-form .btn-submit:focus, .registration-form .btn-submit:focus {
   outline: none;
   -webkit-box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.3);
           box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.3);
 }
-.donation-form .captcha {
+.donation-form .captcha, .registration-form .captcha {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3521,33 +3677,33 @@ input::placeholder, textarea::placeholder {
       -ms-flex-align: center;
           align-items: center;
 }
-.donation-form .captcha #captcha55296 {
+.donation-form .captcha #captcha55296, .registration-form .captcha #captcha55296 {
   margin: 1rem 0;
 }
 @media (max-width: 768px) {
-  .donation-form {
+  .donation-form, .registration-form {
     padding: 1.5rem;
     margin: 1rem;
   }
-  .donation-form .section h3 {
+  .donation-form .section h3, .registration-form .section h3 {
     font-size: 1.1rem;
   }
-  .donation-form .field.donation-amount input {
+  .donation-form .field.donation-amount input, .registration-form .field.donation-amount input {
     font-size: 1.25rem;
   }
-  .donation-form .btn-submit {
+  .donation-form .btn-submit, .registration-form .btn-submit {
     width: 100%;
     padding: 14px 20px;
   }
 }
-.donation-form .recurring {
+.donation-form .recurring, .registration-form .recurring {
   background: linear-gradient(135deg, #e8f5e8 0%, #f8fff8 100%);
   padding: 1.5rem;
   border-radius: 8px;
   border: 1px solid #d4edda;
   margin-bottom: 2rem;
 }
-.donation-form .recurring .field.checkbox label {
+.donation-form .recurring .field.checkbox label, .registration-form .recurring .field.checkbox label {
   color: #155724;
   font-weight: 500;
   display: -webkit-inline-box;
@@ -3555,132 +3711,136 @@ input::placeholder, textarea::placeholder {
   display: inline-flex;
   padding-left: 20px;
 }
-.donation-form .recurring .field.checkbox label input[type=checkbox] {
+.donation-form .recurring .field.checkbox label input[type=checkbox], .registration-form .recurring .field.checkbox label input[type=checkbox] {
   accent-color: #28a745;
   -webkit-box-flex: 0;
       -ms-flex: 0 auto;
           flex: 0 auto;
 }
 @media (min-width: 768px) {
-  .donation-form .contact .field.first-name, .donation-form .contact .field.last-name {
+  .donation-form .contact .field.first-name, .registration-form .contact .field.first-name, .donation-form .contact .field.last-name, .registration-form .contact .field.last-name {
     display: inline-block;
     width: calc(50% - 0.75rem);
     vertical-align: top;
   }
-  .donation-form .contact .field.first-name.first-name, .donation-form .contact .field.last-name.first-name {
+  .donation-form .contact .field.first-name.first-name, .registration-form .contact .field.first-name.first-name, .donation-form .contact .field.last-name.first-name {
     margin-right: 1.5rem;
   }
 }
 @media (min-width: 768px) {
-  .donation-form .contact .field.email-address, .donation-form .contact .field.phone-number {
+  .donation-form .contact .field.email-address, .registration-form .contact .field.email-address, .donation-form .contact .field.phone-number, .registration-form .contact .field.phone-number {
     max-width: 275px;
   }
 }
-.donation-form .contact h3 {
+.donation-form .contact h3, .registration-form .contact h3 {
   display: block;
   width: 100%;
   clear: both;
 }
 @media (min-width: 768px) {
-  .donation-form .billing-address .field.city, .donation-form .billing-address .field.state, .donation-form .billing-address .field.zip-code {
+  .donation-form .billing-address .field.city, .registration-form .billing-address .field.city, .donation-form .billing-address .field.state, .registration-form .billing-address .field.state, .donation-form .billing-address .field.zip-code, .registration-form .billing-address .field.zip-code {
     display: inline-block;
     width: calc(33.333% - 1rem);
     margin-right: 1.5rem;
     vertical-align: top;
   }
-  .donation-form .billing-address .field.city:last-child, .donation-form .billing-address .field.state:last-child, .donation-form .billing-address .field.zip-code:last-child {
+  .donation-form .billing-address .field.city:last-child, .registration-form .billing-address .field.city:last-child, .donation-form .billing-address .field.state:last-child, .registration-form .billing-address .field.state:last-child, .donation-form .billing-address .field.zip-code:last-child, .registration-form .billing-address .field.zip-code:last-child {
     margin-right: 0;
   }
 }
-.donation-form .billing-address h3 {
+.donation-form .billing-address h3, .registration-form .billing-address h3 {
   display: block;
   width: 100%;
   clear: both;
 }
-.donation-form .field {
+.donation-form .field, .registration-form .field {
   opacity: 0;
   -webkit-animation: slideInUp 0.6s ease forwards;
           animation: slideInUp 0.6s ease forwards;
 }
-.donation-form .field:nth-child(1) {
+.donation-form .field:nth-child(1), .registration-form .field:nth-child(1) {
   -webkit-animation-delay: 0.1s;
           animation-delay: 0.1s;
 }
-.donation-form .field:nth-child(2) {
+.donation-form .field:nth-child(2), .registration-form .field:nth-child(2) {
   -webkit-animation-delay: 0.2s;
           animation-delay: 0.2s;
 }
-.donation-form .field:nth-child(3) {
+.donation-form .field:nth-child(3), .registration-form .field:nth-child(3) {
   -webkit-animation-delay: 0.3s;
           animation-delay: 0.3s;
 }
-.donation-form .field:nth-child(4) {
+.donation-form .field:nth-child(4), .registration-form .field:nth-child(4) {
   -webkit-animation-delay: 0.4s;
           animation-delay: 0.4s;
 }
-.donation-form .field:nth-child(5) {
+.donation-form .field:nth-child(5), .registration-form .field:nth-child(5) {
   -webkit-animation-delay: 0.5s;
           animation-delay: 0.5s;
 }
-.donation-form .field:nth-child(6) {
+.donation-form .field:nth-child(6), .registration-form .field:nth-child(6) {
   -webkit-animation-delay: 0.6s;
           animation-delay: 0.6s;
 }
-.donation-form .field:nth-child(7) {
+.donation-form .field:nth-child(7), .registration-form .field:nth-child(7) {
   -webkit-animation-delay: 0.7s;
           animation-delay: 0.7s;
 }
-.donation-form .field:nth-child(8) {
+.donation-form .field:nth-child(8), .registration-form .field:nth-child(8) {
   -webkit-animation-delay: 0.8s;
           animation-delay: 0.8s;
 }
-.donation-form .field:nth-child(9) {
+.donation-form .field:nth-child(9), .registration-form .field:nth-child(9) {
   -webkit-animation-delay: 0.9s;
           animation-delay: 0.9s;
 }
-.donation-form .field:nth-child(10) {
+.donation-form .field:nth-child(10), .registration-form .field:nth-child(10) {
   -webkit-animation-delay: 1s;
           animation-delay: 1s;
 }
-.donation-form .field:nth-child(11) {
+.donation-form .field:nth-child(11), .registration-form .field:nth-child(11) {
   -webkit-animation-delay: 1.1s;
           animation-delay: 1.1s;
 }
-.donation-form .field:nth-child(12) {
+.donation-form .field:nth-child(12), .registration-form .field:nth-child(12) {
   -webkit-animation-delay: 1.2s;
           animation-delay: 1.2s;
 }
-.donation-form .field:nth-child(13) {
+.donation-form .field:nth-child(13), .registration-form .field:nth-child(13) {
   -webkit-animation-delay: 1.3s;
           animation-delay: 1.3s;
 }
-.donation-form .field:nth-child(14) {
+.donation-form .field:nth-child(14), .registration-form .field:nth-child(14) {
   -webkit-animation-delay: 1.4s;
           animation-delay: 1.4s;
 }
-.donation-form .field:nth-child(15) {
+.donation-form .field:nth-child(15), .registration-form .field:nth-child(15) {
   -webkit-animation-delay: 1.5s;
           animation-delay: 1.5s;
 }
-.donation-form .field:nth-child(16) {
+.donation-form .field:nth-child(16), .registration-form .field:nth-child(16) {
   -webkit-animation-delay: 1.6s;
           animation-delay: 1.6s;
 }
-.donation-form .field:nth-child(17) {
+.donation-form .field:nth-child(17), .registration-form .field:nth-child(17) {
   -webkit-animation-delay: 1.7s;
           animation-delay: 1.7s;
 }
-.donation-form .field:nth-child(18) {
+.donation-form .field:nth-child(18), .registration-form .field:nth-child(18) {
   -webkit-animation-delay: 1.8s;
           animation-delay: 1.8s;
 }
-.donation-form .field:nth-child(19) {
+.donation-form .field:nth-child(19), .registration-form .field:nth-child(19) {
   -webkit-animation-delay: 1.9s;
           animation-delay: 1.9s;
 }
-.donation-form .field:nth-child(20) {
+.donation-form .field:nth-child(20), .registration-form .field:nth-child(20) {
   -webkit-animation-delay: 2s;
           animation-delay: 2s;
+}
+
+.registration-form .registration-summary #numberOfRegistrations {
+  min-width: 69px !important;
 }
 
 @-webkit-keyframes slideInUp {
@@ -3782,6 +3942,128 @@ form input:focus {
     outline: 2px solid SelectedItem;
   }
 }
+.registration-form .registrationType .field.radio label .label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.registration-form .registrationType .field.radio label .label::after {
+  content: "";
+  font-weight: 700;
+  color: #27ae60;
+  font-size: 1.1rem;
+}
+.registration-form .registrationSummary .registration-summary {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin: 1.5rem 0;
+}
+.registration-form .registrationSummary .registration-summary th, .registration-form .registrationSummary .registration-summary td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #f0f0f0;
+  vertical-align: middle;
+}
+.registration-form .registrationSummary .registration-summary thead th,
+.registration-form .registrationSummary .registration-summary tbody tr:first-child th {
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.9rem;
+}
+.registration-form .registrationSummary .registration-summary tbody tr {
+  -webkit-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
+}
+.registration-form .registrationSummary .registration-summary tbody tr:hover {
+  background: #f8fbff;
+}
+.registration-form .registrationSummary .registration-summary tbody tr.summary-total {
+  background: #f8f9fa;
+  font-weight: 600;
+  border-top: 2px solid #3498db;
+}
+.registration-form .registrationSummary .registration-summary tbody tr.summary-total td {
+  color: #2c3e50;
+  font-size: 1.1rem;
+}
+.registration-form .registrationSummary .registration-summary tbody tr.additional-donation, .registration-form .registrationSummary .registration-summary tbody tr.cannot-attend-donation {
+  background: rgba(39, 174, 96, 0.05);
+}
+.registration-form .registrationSummary .registration-summary tbody tr.additional-donation input, .registration-form .registrationSummary .registration-summary tbody tr.cannot-attend-donation input {
+  max-width: 150px;
+}
+.registration-form .registrationSummary .registration-summary .quantity-column {
+  width: 20%;
+  text-align: center;
+}
+.registration-form .registrationSummary .registration-summary .description-column {
+  width: 40%;
+}
+.registration-form .registrationSummary .registration-summary .tickets-column {
+  width: 20%;
+  text-align: center;
+}
+.registration-form .registrationSummary .registration-summary .price-column {
+  width: 20%;
+  text-align: right;
+  font-weight: 600;
+  color: #27ae60;
+}
+.registration-form .registrationSummary .registration-summary input[type=number] {
+  max-width: 80px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+}
+.registration-form .registrationSummary .registration-summary input[type=text].currency {
+  max-width: 120px;
+  text-align: right;
+}
+.registration-form .registrationSummary .registration-summary #unitPrice,
+.registration-form .registrationSummary .registration-summary #totalPrice {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #333;
+}
+.registration-form .registrationSummary .registration-summary #totalPrice {
+  font-size: 1.4rem;
+  color: #27ae60;
+}
+@media (max-width: 768px) {
+  .registration-form .registrationSummary .registration-summary {
+    font-size: 0.9rem;
+  }
+  .registration-form .registrationSummary .registration-summary th, .registration-form .registrationSummary .registration-summary td {
+    padding: 0.75rem 0.5rem;
+  }
+  .registration-form .registrationSummary .registration-summary .description-column {
+    width: 35%;
+  }
+  .registration-form .registrationSummary .registration-summary .quantity-column,
+  .registration-form .registrationSummary .registration-summary .tickets-column {
+    width: 22.5%;
+  }
+  .registration-form .registrationSummary .registration-summary input[type=number] {
+    max-width: 60px;
+  }
+}
+
 /* ==========================================================================
    A TAG (links) STYLES
 /* Links and Buttons
@@ -3847,7 +4129,7 @@ p {
   white-space: nowrap;
 }
 .c-blk-btn a:hover, .c-btn-primary a:hover, .wp-block-button.is-style-standard a.wp-block-button__link:hover, .wp-block-button.is-style-standard .wp-block-button__link:hover {
-  background-color: #f5f5f5;
+  background-color: #fafafa;
   color: #000;
 }
 

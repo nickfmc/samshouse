@@ -10,7 +10,6 @@ input::placeholder, textarea::placeholder {
 
 // ++ DONATION FORM STYLES +++++++++++++++++++++++++++++++++
 .donation-form {
-  max-width: 600px;
   margin: 0 auto;
   padding: 2rem;
   background: #fff;
@@ -148,6 +147,122 @@ input::placeholder, textarea::placeholder {
           flex: 1;
           line-height: 1.5;
         }
+      }
+    }
+
+    // Radio button styling
+    &.radio {
+      margin-bottom: 1rem;
+      display: flex;
+      
+      label {
+        display: flex !important;
+        align-items: flex-start;
+        cursor: pointer;
+        margin-bottom: 0;
+        padding: 1rem;
+        background: #fff;
+        border: 2px solid #e1e8ed;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        position: relative;
+        flex: 1 1 auto;
+
+        &:hover {
+          border-color: #3498db;
+          background: #f8fbff;
+          transform: translateY(-1px);
+          box-shadow: 0 2px 8px rgba(52, 152, 219, 0.1);
+        }
+
+        input[type="radio"] {
+          flex: 0 0 auto;
+          width: 20px;
+          height: 20px;
+          margin-right: 12px;
+          margin-top: 2px;
+          accent-color: #3498db;
+          cursor: pointer;
+        }
+
+        .label {
+          flex: 1;
+          line-height: 1.5;
+          font-weight: 500;
+          color: #2c3e50;
+        }
+
+        // When radio is checked
+        input[type="radio"]:checked + .label {
+          color: #3498db;
+          font-weight: 600;
+        }
+
+        // Selected state styling
+        &:has(input[type="radio"]:checked) {
+          border-color: #3498db;
+          background: linear-gradient(135deg, #f8fbff 0%, #ffffff 100%);
+          box-shadow: 0 2px 12px rgba(52, 152, 219, 0.15);
+        }
+      }
+    }    // Number input improvements
+    input[type="number"] {
+      width: 100%;
+      min-width: 120px; // Ensure enough space for numbers
+      font-feature-settings: "tnum"; // Use tabular numbers for better alignment
+      text-align: left; // Align left for better readability
+      padding-right: 20px; // Extra space to prevent text cutoff
+
+      // Specific styling for quantity inputs
+      &#numberOfRegistrations {
+        max-width: 100px;
+        text-align: center;
+        font-weight: 600;
+        font-size: 1.1rem;
+        border-color: #27ae60;
+        padding: 12px 16px;
+        
+        &:focus {
+          border-color: #27ae60;
+          box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.1);
+        }
+      }
+
+      // Specific styling for ZIP code inputs
+      &#zip-code {
+        max-width: 180px;
+        letter-spacing: 0.5px;
+        padding: 12px 20px;
+      }
+
+      // Remove spinner arrows on webkit browsers for cleaner look
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      // For Firefox
+      &[type="number"] {
+        -moz-appearance: textfield;
+      }
+    }
+
+    // Currency input styling
+    &.amount-field,
+    input.currency {
+      font-weight: 600;
+      color: #27ae60;
+      border-color: #27ae60;
+      
+      &:focus {
+        border-color: #27ae60;
+        box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.1);
+      }
+
+      &::placeholder {
+        color: #95c5a8;
+        font-weight: 500;
       }
     }
 
@@ -350,6 +465,11 @@ input::placeholder, textarea::placeholder {
       }
     }
   }
+  
+}
+
+.registration-form .registration-summary #numberOfRegistrations {
+  min-width: 69px !important;
 }
 
 @keyframes slideInUp {
@@ -406,5 +526,164 @@ form {
 @media (forced-colors: active) {
   form input:focus {
     outline: 2px solid SelectedItem;
+  }
+}
+
+// ++ REGISTRATION FORM SPECIFIC STYLES +++++++++++++++++++++++++++++++++
+.registration-form {
+  @extend .donation-form;
+
+  // Registration type section with price highlight
+  .registrationType {
+    .field.radio {
+      label {
+        .label {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          
+          // Extract and style price from label text
+          &::after {
+            content: "";
+            font-weight: 700;
+            color: #27ae60;
+            font-size: 1.1rem;
+          }
+        }
+      }
+    }
+  }
+
+  // Registration summary table styling
+  .registrationSummary {
+    .registration-summary {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      margin: 1.5rem 0;
+
+      th, td {
+        padding: 1rem;
+        text-align: left;
+        border-bottom: 1px solid #f0f0f0;
+        vertical-align: middle;
+      }
+
+      thead th,
+      tbody tr:first-child th {
+        background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+        color: white;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-size: 0.9rem;
+      }
+
+      tbody tr {
+        transition: background-color 0.2s ease;
+
+        &:hover {
+          background: #f8fbff;
+        }
+
+        &.summary-total {
+          background: #f8f9fa;
+          font-weight: 600;
+          border-top: 2px solid #3498db;
+
+          td {
+            color: #2c3e50;
+            font-size: 1.1rem;
+          }
+        }
+
+        &.additional-donation,
+        &.cannot-attend-donation {
+          background: rgba(39, 174, 96, 0.05);
+          
+          input {
+            max-width: 150px;
+          }
+        }
+      }
+
+      .quantity-column {
+        width: 20%;
+        text-align: center;
+      }
+
+      .description-column {
+        width: 40%;
+      }
+
+      .tickets-column {
+        width: 20%;
+        text-align: center;
+      }
+
+      .price-column {
+        width: 20%;
+        text-align: right;
+        font-weight: 600;
+        color: #27ae60;
+      }
+
+      // Input styling within table
+      input[type="number"] {
+        max-width: 80px;
+        text-align: center;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 0.5rem;
+        margin-right: 0.5rem;
+      }
+
+      input[type="text"].currency {
+        max-width: 120px;
+        text-align: right;
+      }
+
+      // Price highlighting
+      #unitPrice,
+      #totalPrice {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #333;
+      }
+
+      #totalPrice {
+        font-size: 1.4rem;
+        color: #27ae60;
+      }
+    }
+  }
+
+  // Responsive table adjustments
+  @media (max-width: 768px) {
+    .registrationSummary {
+      .registration-summary {
+        font-size: 0.9rem;
+
+        th, td {
+          padding: 0.75rem 0.5rem;
+        }
+
+        .description-column {
+          width: 35%;
+        }
+
+        .quantity-column,
+        .tickets-column {
+          width: 22.5%;
+        }
+
+        input[type="number"] {
+          max-width: 60px;
+        }
+      }
+    }
   }
 }

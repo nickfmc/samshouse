@@ -1,0 +1,346 @@
+{
+    "key": "group_event_fields",
+    "title": "Event Information",
+    "fields": [        {
+            "key": "field_event_title",
+            "label": "Event Title",
+            "name": "event_title",
+            "type": "text",
+            "instructions": "Enter the event title (optional - will use page title if empty)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_event_logo",
+            "label": "Event Logo",
+            "name": "event_logo",
+            "type": "image",
+            "instructions": "Upload a logo for this event (optional)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_event_date",
+            "label": "Event Date",
+            "name": "event_date",
+            "type": "date_picker",
+            "instructions": "Select the event date",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "F j, Y",
+            "return_format": "F j, Y",
+            "first_day": 1
+        },
+        {
+            "key": "field_event_day_of_week",
+            "label": "Day of Week",
+            "name": "event_day_of_week",
+            "type": "select",
+            "instructions": "Select the day of the week",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Monday": "Monday",
+                "Tuesday": "Tuesday",
+                "Wednesday": "Wednesday",
+                "Thursday": "Thursday",
+                "Friday": "Friday",
+                "Saturday": "Saturday",
+                "Sunday": "Sunday"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_event_location_name",
+            "label": "Location Name",
+            "name": "event_location_name",
+            "type": "text",
+            "instructions": "Enter the venue name",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "e.g., Pebble Brook Golf Club",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_event_location_address",
+            "label": "Location Address",
+            "name": "event_location_address",
+            "type": "textarea",
+            "instructions": "Enter the full address (optional)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "70",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 3,
+            "new_lines": "br"
+        },
+        {
+            "key": "field_event_directions_url",
+            "label": "Directions URL",
+            "name": "event_directions_url",
+            "type": "url",
+            "instructions": "Enter the URL for directions (Google Maps, etc.)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "https://maps.google.com/..."
+        },
+        {
+            "key": "field_event_registration_time",
+            "label": "Registration Time",
+            "name": "event_registration_time",
+            "type": "text",
+            "instructions": "Enter registration time period",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "10:30 - 11:30 a.m.",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_event_start_time",
+            "label": "Event Start Time",
+            "name": "event_start_time",
+            "type": "text",
+            "instructions": "Enter the event start time",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "12:00pm (Introduction and Shotgun Start)",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_event_cost_options",
+            "label": "Cost/Donation Options",
+            "name": "event_cost_options",
+            "type": "repeater",
+            "instructions": "Add cost or donation options",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Add Cost Option",
+            "sub_fields": [
+                {
+                    "key": "field_cost_amount",
+                    "label": "Amount",
+                    "name": "amount",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "30",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "$150",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_cost_description",
+                    "label": "Description",
+                    "name": "description",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "70",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Individual Registration",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                }
+            ]
+        },
+        {
+            "key": "field_event_additional_info",
+            "label": "Additional Information",
+            "name": "event_additional_info",
+            "type": "wysiwyg",
+            "instructions": "Add any additional event information or details",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,            "delay": 0
+        },
+        {
+            "key": "field_bloomarag_form_embed",
+            "label": "Bloomarag Form Embed",
+            "name": "bloomarag_form_embed",
+            "type": "textarea",
+            "instructions": "Paste the Bloomarag form embed code here (optional)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "<iframe src=\"...\" ...></iframe>",
+            "maxlength": "",
+            "rows": 5,            "new_lines": ""
+        },
+        {
+            "key": "field_event_script_embed",
+            "label": "Script Embed",
+            "name": "event_script_embed",
+            "type": "textarea",
+            "instructions": "Add any script tags or embeds here (e.g., Bloomerang widget). This will appear before the Additional Information section. Use with caution - only add trusted content.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "<script>...</script> or <iframe>...</iframe>",
+            "maxlength": "",
+            "rows": 8,
+            "new_lines": ""
+        },
+        {
+            "key": "field_past_events_gallery",
+            "label": "Past Events Gallery",
+            "name": "past_events_gallery",
+            "type": "gallery",
+            "instructions": "Upload images from past events to display in the gallery at the bottom of the page",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "insert": "append",
+            "library": "all",
+            "min": "",
+            "max": "",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "pg-blank.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Fields for event information on the event template pages",
+    "show_in_rest": 0
+}
