@@ -1,5 +1,5 @@
 /* ==========================================================================
-   MAIN NAVIGATION AND MENU STYLES
+   MAIN NAVIGATION AND MENU STYLES - MODERN DESIGN
    ========================================================================== */
 
 // ++ hide main-navigation wrapper (responsive first) +++++++++++++++++++++++++++++++++
@@ -19,206 +19,283 @@
     min-width: 60%;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
   }
 }
 
 
 
-// ++ menu styles (top level) +++++++++++++++++++++++++++++++++
+// ++ menu styles (top level) - Modern Design +++++++++++++++++++++++++++++++++
 @media (width >= $bp-large) {
   .c-main-menu {
     display: inline-flex;
-    align-items: flex-start;
+    align-items: center;
     position: relative;
     list-style: none;
     margin: 0;
     padding: 0;
+    gap: 0.5rem;
+    
     .dropdown-toggle {
       background: none;
       border: none;
-      padding: 0;
+      padding: 6px;
       cursor: pointer;
       position: absolute;
-      right: -2px;
+      right: 18px;
       top: 50%;
-      margin-top: 2px;
       color: $color-secondary;
       transform: translateY(-50%);
+      transition: $transition-ease;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      &:hover {
+        background-color: rgba($color-secondary, 0.1);
+      }
       
       &[aria-expanded="true"] {
-          svg {
-              transform: rotate(180deg);
-          }
+        svg {
+          transform: rotate(180deg);
+        }
+      }
+      
+      svg {
+        width: 16px;
+        height: 16px;
+        transition: transform 0.3s ease;
       }
     }
 
-      .screen-reader-text {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        border: 0;
+    .screen-reader-text {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
     }
   }
+  
   .c-main-menu > li {
     margin: 0;
     line-height: 1;
     position: relative;
     white-space: nowrap;
   }
+  
   .c-main-menu > li > a {
     color: $color-secondary;
     display: block;
-    font-size: 18px;
-    font-weight: 300;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
     margin: 0;
-    padding: 16px 20px 16px 1rem;
+    padding: 18px 20px;
     position: relative;
-    &:first-of-type > a {
-      padding-left: 0;
-    }
-    &:last-of-type > a {
-      padding-right: 0;
-    }
-    // line over menu items on hover
-    // &::after {
-    //   position: absolute;
-    //   content: "";
-    //   display: block;
-    //   width: calc(100% - 32px);
-    //   height: 4px;
-    //   background-color: #fff;
-    //   border-radius: 20px;
-    //   top: 25px;
-    //   transition: $transition-ease;
-    // }
-    &:focus {
-
-    outline: 2px solid $color-primary; // Add a visible focus outline
-    outline-offset: -2px;
+    text-decoration: none;
+    transition: $transition-ease;
+    border-radius: 8px;
+    
+    &:hover {
+      color: $color-primary;
+      transform: translateY(-1px);
     }
     
-  }
-  .c-main-menu > li > a:hover {
-    color: #000;
-    // &::after {
-    //   background-color: $color-primary;
-    //   transition: $transition-ease;
-    // }
-  }
-  .c-main-menu > li:hover a{
-   
+    &:focus {
+      outline: 2px solid $color-primary;
+      outline-offset: 2px;
+    }
+    
+    // Modern underline effect
     &::after {
-      background-color: $color-primary;
-      transition: $transition-ease;
+      content: '';
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, $color-primary, $color-secondary);
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+      border-radius: 1px;
+    }
+    
+    &:hover::after {
+      width: calc(100% - 30px);
     }
   }
+  
+  // Active/current page styles
   .c-main-menu > .current-menu-item > a,
   .c-main-menu > .current-page-ancestor > a,
   .c-main-menu > .current_page_item > a,
   .c-main-menu > .current_page_parent > a,
   .c-main-menu > .current_page_ancestor > a {
-    color: #222222
-  }
-
-// HAS CHILDREN DROPDOWN
-  .c-main-menu > .menu-item-has-children > a {
-    position: relative; 
-   
-}
-
-.c-main-menu > .menu-item-has-children:hover > a::before {
-  transform: rotate(180deg);
-}
-
-}
-// END menu top level
-  .c-main-menu > li.c-donate-button-menu {
-    a {
-      padding: 15px 30px !important;
-      color: #fff !important;
-      position: relative;
-        font-weight: 600;
-  font-size: 18px;
-      
-      &::before {
-        content: '';
-        display: inline-block;
-        vertical-align: middle;
-        width: 20px;
-        height: 20px;
-        margin-right: 10px;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z'%3E%3C/path%3E%3C/svg%3E");
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center;
-        flex-shrink: 0;
-      }
+    color: $color-primary;
+    font-weight: 600;
+    
+    &::after {
+      width: calc(100% - 48px);
     }
   }
 
+  // Has children dropdown indicator
+  .c-main-menu > .menu-item-has-children > a {
+    padding-right: 48px; // Make room for dropdown arrow
+  }
+}
+// ++ Preserve the donate button styling +++++++++++++++++++++++++++++++++
+.c-main-menu > li.c-donate-button-menu {
+  a {
+    padding: 15px 30px !important;
+    color: #fff !important;
+    position: relative;
+    font-weight: 600;
+    font-size: 18px;
+    background: linear-gradient(135deg, $color-primary, darken($color-primary, 10%));
+    border-radius: 50px;
+    box-shadow: 0 4px 12px rgba($color-primary, 0.3);
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba($color-primary, 0.4);
+      background: linear-gradient(135deg, lighten($color-primary, 5%), $color-primary);
+    }
+    
+    &::before {
+      content: '';
+      display: inline-block;
+      vertical-align: middle;
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z'%3E%3C/path%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      flex-shrink: 0;
+    }
+    
+    &::after {
+      display: none; // Remove the underline effect for the button
+    }
+  }
+}
 
-// ++ menu style (drop down!) +++++++++++++++++++++++++++++++++
+
+// ++ Modern dropdown menu styles +++++++++++++++++++++++++++++++++
 @media (width >= $bp-large) {
   .c-main-menu li:hover ul, 
   .c-main-menu li:focus ul,
   .c-main-menu .sub-menu.is-active {
-    top: 100%;
     opacity: 1;
     visibility: visible;
+    transform: translateY(0) scale(1);
   }
+  
   .c-main-menu ul {
-    background-color: #fff;
-    box-shadow: 0px 12px 16px -4px rgba(0, 0, 0, 0.25);
-    border: 1px solid var(--Colors-Border-border-secondary, #E9EAEB);
+    background: #fff;
+    backdrop-filter: blur(10px);
+    box-shadow: 
+      0 20px 25px -5px rgba(0, 0, 0, 0.1),
+      0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    right: 0;
+    transform: translateX(-50%) translateY(10px) scale(0.95);
     top: 100%;
-    min-width: 336px;
+    min-width: 280px;
     margin: 0;
-    padding: 0;
+    padding: 8px;
     opacity: 0;
     visibility: hidden;
-    transition: all 200ms linear;
-    z-index: z(dropdown);
-    border-radius: 16px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+    border-radius: 12px;
     display: flex;
     flex-direction: column;
-    padding: 8px;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-bottom: 8px solid #fff;
+      filter: drop-shadow(0 -2px 4px rgba(0, 0, 0, 0.1));
+    }
   }
+  
   .c-main-menu ul li {
     position: relative;
-    max-height: 0;
-    transition: max-height 300ms linear;
-    overflow: hidden;
     display: flex;
-    // align-self: stretch;
-    // align-items: flex-start;
-    // gap: var(--spacing-lg, 12px);
+    margin: 0;
+    overflow: visible;
     
-   
-
+    &:first-child a {
+      border-radius: 8px 8px 4px 4px;
+    }
+    
+    &:last-child a {
+      border-radius: 4px 4px 8px 8px;
+    }
+    
+    &:only-child a {
+      border-radius: 8px;
+    }
   }
-  .c-main-menu li:hover ul li,
-  .c-main-menu li:focus ul li,
-  .c-main-menu .sub-menu.is-active li {
-    max-height: 140px;
-  }
+  
   .c-main-menu ul li a {
-    color: $color-primary;
-    font-size: 0.938rem;
-    padding: 15px 15px;
+    color: $color-gray-dark;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 12px 16px;
     width: 100%;
     display: block;
-    transition: $transition-ease;
-  }
-  .c-main-menu ul li a:focus {
-    outline: 2px solid $color-primary; // Add a visible focus outline
-    outline-offset: -2px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-radius: 6px;
+    position: relative;
+    
+    &:hover {
+      color: $color-primary;
+      background: linear-gradient(135deg, rgba($color-primary, 0.08), rgba($color-secondary, 0.08));
+      transform: translateX(4px);
+    }
+    
+    &:focus {
+      outline: 2px solid $color-primary;
+      outline-offset: 2px;
+    }
+    
+    // Modern accent line on hover
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 0;
+      height: 0;
+      background: linear-gradient(135deg, $color-primary, $color-secondary);
+      transition: all 0.3s ease;
+      transform: translateY(-50%);
+      border-radius: 0 2px 2px 0;
+    }
+    
+    &:hover::before {
+      width: 3px;
+      height: 70%;
+    }
   }
 
   .c-main-menu ul li a:hover,
@@ -227,10 +304,13 @@
   .c-main-menu ul .current_page_item > a,
   .c-main-menu ul .current_page_parent > a,
   .c-main-menu ul .current_page_ancestor > a {
-    color: #000;
-    border-radius: var(--radius-md, 8px);
-    background-color: #FAFAFA;
-    // text-decoration: underline;
+    color: $color-primary;
+    background: linear-gradient(135deg, rgba($color-primary, 0.12), rgba($color-secondary, 0.08));
+    
+    &::before {
+      width: 3px;
+      height: 70%;
+    }
   }
 }
-// END drop down styling
+// END modern dropdown styling

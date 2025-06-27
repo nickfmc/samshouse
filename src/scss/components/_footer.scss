@@ -73,6 +73,78 @@
   }
 }
 
+// Social icons styling
+.c-footer-social {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  
+  @media (max-width: 768px) {
+    margin-bottom: 25px;
+  }
+}
+
+.c-social-icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+    
+    &:focus {
+      outline: 2px solid $color-primary;
+      outline-offset: 2px;
+    }
+    
+    svg {
+      width: 24px;
+      height: 24px;
+      transition: all 0.3s ease;
+      
+      path {
+        fill: rgba(255, 255, 255, 0.8);
+        transition: fill 0.3s ease;
+      }
+    }
+    
+    &:hover svg path {
+      fill: #ffffff;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    gap: 15px;
+    
+    a {
+      width: 44px;
+      height: 44px;
+      
+      svg {
+        width: 22px;
+        height: 22px;
+      }
+    }
+  }
+}
+
 .c-footer-bottom {
   border-top: 1px solid #e9ecef23;
   padding-top: 25px;

@@ -162,14 +162,19 @@ Description: A custom page template for displaying upcoming events with ACF fiel
                      </div><?php endwhile; ?>
                  </div>
                </div>
-             <?php endif; ?>
-
-               <!-- Event Logo -->
+             <?php endif; ?>             <!-- Event Logo -->
              <?php 
              $event_logo = get_field('event_logo');
+             $event_url = get_field('event_url');
              if ($event_logo): ?>
                <div class="c-event-logo">
-                 <img src="<?php echo esc_url($event_logo['sizes']['medium']); ?>" alt="<?php echo esc_attr($event_logo['alt']); ?>">
+                 <?php if ($event_url): ?>
+                   <a href="<?php echo esc_url($event_url); ?>" target="_blank" rel="noopener noreferrer">
+                     <img src="<?php echo esc_url($event_logo['sizes']['medium']); ?>" alt="<?php echo esc_attr($event_logo['alt']); ?>">
+                   </a>
+                 <?php else: ?>
+                   <img src="<?php echo esc_url($event_logo['sizes']['medium']); ?>" alt="<?php echo esc_attr($event_logo['alt']); ?>">
+                 <?php endif; ?>
                </div>
              <?php endif; ?>
 
@@ -189,22 +194,24 @@ Description: A custom page template for displaying upcoming events with ACF fiel
                </div>
              <?php endif; ?>
 
-        <div class="o-wrapper-wide pb-20">
-          <!-- Past Events Gallery -->
-          <?php
-          $gallery = get_field('past_events_gallery');
-          if ($gallery): ?>
-            <div class="c-past-events-gallery">
-              <h3>Past Events</h3>
-              <div class="c-gallery-grid">
-                <?php foreach ($gallery as $image): ?>
-                  <div class="c-gallery-item">
-                    <img src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
-                  </div>
-                <?php endforeach; ?>
+        <div class="c-event-galleries">
+          <div class="o-wrapper-wide pb-20">
+            <!-- Past Events Gallery -->
+            <?php
+            $gallery = get_field('past_events_gallery');
+            if ($gallery): ?>
+              <div class="c-past-events-gallery">
+                <h3>Past Events</h3>
+                <div class="c-gallery-grid">
+                  <?php foreach ($gallery as $image): ?>
+                    <div class="c-gallery-item">
+                      <img src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
+                    </div>
+                  <?php endforeach; ?>
+                </div>
               </div>
-            </div>
-          <?php endif; ?>
+            <?php endif; ?>
+          </div>
         </div>
       
     <?php endwhile; endif; // END main loop (if/while) ?>

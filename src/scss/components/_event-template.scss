@@ -7,7 +7,7 @@
   margin: 0 auto;
   padding: 2rem 1rem;
   
-  @media (min-width: $bp-medium) {
+  @media (min-width: 908px) {
     padding: 3rem 2rem;
     display: grid;
     grid-template-columns: 1fr 350px;
@@ -17,13 +17,13 @@
 }
 
 .c-event-main-content {
-  @media (min-width: $bp-medium) {
+  @media (min-width: 908px) {
     grid-column: 1;
   }
 }
 
 .c-event-sidebar {
-  @media (min-width: $bp-medium) {
+  @media (min-width: 908px) {
     grid-column: 2;
     position: sticky;
     top: 2rem;
@@ -58,7 +58,7 @@
     margin: 0 0 0.5rem 0;
     line-height: 1.2;
     
-    @media (min-width: $bp-medium) {
+    @media (min-width: 908px) {
       font-size: 2.5rem;
     }
   }
@@ -358,7 +358,7 @@ background: linear-gradient(135deg,#e74c3c,#f18d2c);
   padding-top: 3rem;
   border-top: 2px solid $color-gray-light;
   
-  @media (min-width: $bp-medium) {
+  @media (min-width: 908px) {
     grid-column: 1 / -1;
   }
   
@@ -371,13 +371,17 @@ background: linear-gradient(135deg,#e74c3c,#f18d2c);
   }
 }
 
+.c-event-galleries {
+  padding: 0 25px;
+}
+
 .c-gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
   margin-top: 2rem;
   
-  @media (min-width: $bp-medium) {
+  @media (min-width: 908px) {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
   }

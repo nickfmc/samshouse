@@ -356,8 +356,8 @@ input::placeholder, textarea::placeholder {
 
   // Responsive design
   @media (max-width: 768px) {
-    padding: 1.5rem;
-    margin: 1rem;
+    padding: 10px;
+    margin: 1rem 0;
 
     .section h3 {
       font-size: 1.1rem;

@@ -3682,8 +3682,8 @@ input::placeholder, textarea::placeholder {
 }
 @media (max-width: 768px) {
   .donation-form, .registration-form {
-    padding: 1.5rem;
-    margin: 1rem;
+    padding: 10px;
+    margin: 1rem 0;
   }
   .donation-form .section h3, .registration-form .section h3 {
     font-size: 1.1rem;
